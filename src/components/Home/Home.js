@@ -1,15 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import useServices from '../../Hook/useServices';
 import Banner from '../Banner/Banner';
-import Services from '../Services/Services';
-
-
-
+import Service from '../Service/Service';
 
 const Home = () => {
+    const services = useServices('services.json');
+    //console.log(services);
+    const shortServices = services.slice(0, 3);
+    //console.log(shortServices);
     return (
         <>
             <Banner></Banner>
-            <Services></Services>
+            <div className='container my-5'>
+                <h4 className='text-center text-black mb-5'>SERVICES</h4>
+                <div className="row justify-content-center g-4 ">
+                    {
+                        shortServices.map(service => <Service key={service.id} service={service}></Service>)
+                    }
+
+                </div>
+                <div className='mx-auto text-center my-4'>
+                    <Link className='text-decoration-none fw-bolder text-black' to="/services">See More...</Link>
+                </div>
+            </div>
         </>
     );
 };
