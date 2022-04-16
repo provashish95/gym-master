@@ -36,13 +36,13 @@ const Login = () => {
         <div className='container my-5'>
             <Form onSubmit={handleSubmit} className='w-50 mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control name='email' type="email" placeholder="Enter email" />
+                    <Form.Control name='email' type="email" placeholder="Enter email" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control name='password' type="password" placeholder="Password" />
+                    <Form.Control name='password' type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
-                    <Form.Control name='confirmPass' type="password" placeholder="Confirm Password" />
+                    <Form.Control name='confirmPass' type="password" placeholder="Confirm Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
