@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Service = ({ service }) => {
     const navigate = useNavigate();
-    console.log(service);
+    //console.log(service);
     const { name, price, description, img } = service;
 
     return (
