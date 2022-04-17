@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
+    const [userError, setUserError] = useState('');
     const navigate = useNavigate();
     const [
         createUserWithEmailAndPassword,
@@ -13,7 +15,7 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-
+    let errorElement;
     const handleSubmit = event => {
         event.preventDefault();
 
@@ -21,17 +23,24 @@ const Register = () => {
         const password = event.target.password.value;
         const confirmPassword = event.target.confirmPass.value;
 
-        createUserWithEmailAndPassword(email, password);
-        navigate('/');
+        if (password !== confirmPassword) {
+            setUserError('Password not matched');
+            return;
+        } else {
+            setUserError('')
+            createUserWithEmailAndPassword(email, password);
+
+        }
     }
 
     if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+
 
     const navigateLogin = () => {
         navigate('/login');
@@ -53,12 +62,16 @@ const Register = () => {
                     <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
                         <Form.Control name='confirmPass' type="password" placeholder="Confirm Password" required />
                     </Form.Group>
+                    <Form.Text className="text-danger">
+                        {userError || ''}
+                    </Form.Text>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Accept gym master terms & condition" />
                     </Form.Group>
                     <Button className='w-50 mx-auto d-block mb-2' variant="dark" type="submit">
                         Register
                     </Button>
+                    {errorElement}
                 </Form>
                 <p>Already have an account? <span className='btn text-dark fw-bold' onClick={navigateLogin}>Please Login </span></p>
                 <SocialLogin></SocialLogin>
