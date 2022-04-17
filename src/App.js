@@ -9,9 +9,11 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 
+
 function App() {
   return (
     <div className="App">
+
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>

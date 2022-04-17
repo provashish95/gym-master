@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Register.css';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -24,6 +24,22 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     let errorElement;
 
+    useEffect(() => {
+        if (user) {
+            navigate('/')
+        }
+    }, [user])
+
+
+    if (error) {
+        errorElement = <p className='text-danger '>Error: {error?.message}</p>
+    }
+    if (loading) {
+        return <Loading></Loading>
+    }
+    const navigateLogin = () => {
+        navigate('/login');
+    }
     const handleSubmit = (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
@@ -37,23 +53,13 @@ const Register = () => {
         } else {
             setUserError('')
             createUserWithEmailAndPassword(email, password)
+
         }
     }
 
-    if (error) {
-        errorElement = <p className='text-danger '>Error: {error?.message}</p>
-    }
-    if (loading) {
-        return <Loading></Loading>
-    }
 
-    const navigateLogin = () => {
-        navigate('/login');
-    }
 
-    if (user) {
-        navigate('/');
-    }
+
 
     return (
         <div className='container mt-3 mb-5 '>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import google from '../../images/social/google.jpg';
 import github from '../../images/social/github.png';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -14,6 +14,12 @@ const SocialLogin = () => {
     let from = location.state?.from?.pathname || "/";
     let errorElement;
 
+    useEffect(() => {
+        if (user || gitUser) {
+            navigate(from, { replace: true })
+        }
+    }, [user, gitUser])
+
     if (loading || gitLoading) {
         return <Loading></Loading>
     }
@@ -22,9 +28,7 @@ const SocialLogin = () => {
         errorElement = <p className='text-danger'>Error: {error?.message}  {gitError?.message} </p>
     }
 
-    if (user || gitUser) {
-        navigate(from, { replace: true });
-    }
+
 
     return (
         <div>

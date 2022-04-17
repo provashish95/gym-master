@@ -1,12 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -23,6 +23,12 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
     let errorElement;
 
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    }, [user])
+
     if (loading || sending) {
         return <Loading></Loading>
     }
@@ -30,11 +36,10 @@ const Login = () => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email, password)
+        signInWithEmailAndPassword(email, password);
+        toast('Login Successfully');
     }
-    if (user) {
-        navigate(from, { replace: true });
-    }
+
     if (error || resetError) {
         errorElement = <p className='text-danger'>Error: {error?.message}  {resetError?.message} </p>
     }
@@ -43,9 +48,9 @@ const Login = () => {
         const email = emailRef.current.value;
         if (email) {
             await sendPasswordResetEmail(email);
-            toast('Sent email');
+            toast.success('Sent email');
         } else {
-            toast('Please enter your email');
+            toast.error('Please enter your email');
         }
     }
 
@@ -72,7 +77,11 @@ const Login = () => {
 
                 <p>New to gym master?<span className='btn text-dark fst-italic fw-bold' onClick={() => navigate('/register')} >Please Register </span></p>
                 <SocialLogin></SocialLogin>
-                <ToastContainer />
+                <ToastContainer toastStyle={{
+                    backgroundColor: "black",
+                    marginTop: "2.5rem",
+                    color: "white"
+                }} />
             </div>
 
         </div>
