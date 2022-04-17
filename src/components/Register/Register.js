@@ -40,7 +40,7 @@ const Register = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         const confirmPassword = event.target.confirmPass.value;
-        console.log(password.length);
+        console.log(password, email);
         if (password.length < 6) {
             setUserError('Password must be 6 character!');
 
@@ -85,7 +85,7 @@ const Register = () => {
                     </Button>
                     {errorElement}
                 </Form>
-                <p>Already have an account? <span className='btn text-dark fw-bold' onClick={navigateLogin}>Please Login </span></p>
+                <p>Already have an account? <span className='btn text-dark fst-italic fw-bold' onClick={navigateLogin}>Please Login </span></p>
                 <SocialLogin></SocialLogin>
                 <button onClick={test}>click me</button>
             </div>
