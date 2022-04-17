@@ -7,7 +7,7 @@ const About = () => {
             <div className="row justify-content-center align-items-center">
                 <div className="col-sm-12 col-md-6 col-lg-6">
                     <h1 className='text-center'>About me !</h1>
-                    <i class="fa-brands fa-google-plus"></i>
+
                 </div>
                 <div className="col-sm-12 col-md-6 col-lg-6">
                     <div className='text-center'>
