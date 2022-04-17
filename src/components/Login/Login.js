@@ -35,8 +35,8 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
-    if (error) {
-        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+    if (error || resetError) {
+        errorElement = <p className='text-danger'>Error: {error?.message}  {resetError?.message} </p>
     }
 
     const resetPassword = async () => {
@@ -48,6 +48,7 @@ const Login = () => {
             toast('Please enter your email');
         }
     }
+
 
     return (
         <div className='container mt-3 mb-5 '>
