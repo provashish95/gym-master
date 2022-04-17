@@ -81,7 +81,7 @@ const Login = () => {
                 <SocialLogin></SocialLogin>
                 <ToastContainer toastStyle={{
                     backgroundColor: "rgb(216, 216, 216)",
-                    marginTop: "3rem",
+                    marginTop: "4rem",
                     color: "black",
                     borderRadius: "20px"
                 }} />

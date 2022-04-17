@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <>
             <Banner></Banner>
-            <div className='container my-5'>
+            <div id='services' className='container my-5'>
                 <h4 className='text-center text-black mb-5'>SERVICES</h4>
                 <div className="row justify-content-center g-4 ">
                     {

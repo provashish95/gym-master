@@ -19,8 +19,8 @@ const Banner = () => {
                     alt="FirstSlide"
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3 className='text-dark'>Be Happy With Healthy Life</h3>
+                    <p className='text-dark'>Fitness training is regular, structured activity designed to promote health in human beings.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>

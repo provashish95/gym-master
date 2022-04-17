@@ -27,16 +27,13 @@ const Header = () => {
                         <li className="nav-item">
                             <CustomLink className="nav-link" aria-current="page" to="/">Home</CustomLink>
                         </li>
-                        <li className="nav-item">
-                            <CustomLink className="nav-link" to="/services">Services</CustomLink>
-                        </li>
+
                         <li className="nav-item">
                             <CustomLink className="nav-link" to="/blogs">Blogs</CustomLink>
                         </li>
                         <li className="nav-item">
                             <CustomLink className="nav-link" to="/about">About</CustomLink>
                         </li>
-
                     </ul>
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
