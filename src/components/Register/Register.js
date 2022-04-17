@@ -21,7 +21,7 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     let errorElement;
 
     const handleSubmit = (event) => {
@@ -32,10 +32,8 @@ const Register = () => {
 
         if (password.length < 6) {
             setUserError('Password must be 6 character!');
-
         } else if (password !== confirmPassword) {
             setUserError('Password not matched');
-
         } else {
             setUserError('')
             createUserWithEmailAndPassword(email, password)
