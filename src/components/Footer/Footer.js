@@ -15,7 +15,6 @@ const Footer = () => {
             <Link to='/' className='text-decoration-none'> <img style={{ width: '30px' }} className='border border-white rounded-circle ms-2 ' src={facebook} alt="googleLogo" /></Link>
             <Link to='/' className='text-decoration-none'> <img style={{ width: '30px' }} className='border border-white rounded-circle ms-2 ' src={twitter} alt="googleLogo" /></Link>
             <Link to='/' className='text-decoration-none'> <img style={{ width: '30px' }} className='border border-white rounded-circle ms-2 ' src={github} alt="googleLogo" /></Link>
-
         </div>
     );
 };
