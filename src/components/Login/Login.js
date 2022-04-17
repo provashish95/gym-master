@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
+    const navigate = useNavigate();
 
     return (
         <div className='container mt-3 mb-5 '>
@@ -23,7 +24,7 @@ const Login = () => {
                         Login
                     </Button>
                 </Form>
-                <p>New to gym master ? <span className='btn text-dark fw-bold' >Please Register </span></p>
+                <p>New to gym master ? <span className='btn text-dark fw-bold' onClick={() => navigate('/register')} >Please Register </span></p>
                 <SocialLogin></SocialLogin>
             </div>
 

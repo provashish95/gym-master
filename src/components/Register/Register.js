@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Register.css';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
@@ -9,11 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-    const [password, setPassword] = useState({ value: "", error: "" });
-    const [passwordConfirmation, setPasswordConfirmation] = useState({
-        value: "",
-        error: "",
-    });
+    const [agree, setAgree] = useState(false);
     const [userError, setUserError] = useState('');
     const navigate = useNavigate();
     const [
@@ -34,27 +31,29 @@ const Register = () => {
     const test = () => toast('wow');
 
     const navigateLogin = () => {
-
         navigate('/login');
     }
+
+
     const handleSubmit = event => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
         const confirmPassword = event.target.confirmPass.value;
-
-        if (password.length < 7) {
+        console.log(password.length);
+        if (password.length < 6) {
             setUserError('Password must be 6 character!');
-            return
+
         } else if (password !== confirmPassword) {
             setUserError('Password not matched');
-            return;
+
         } else {
             setUserError('')
             createUserWithEmailAndPassword(email, password);
-            navigate('/');
+            navigate('/')
         }
     }
+
 
     return (
         <div className='container mt-3 mb-5 '>
@@ -78,9 +77,10 @@ const Register = () => {
                         {userError || ''}
                     </Form.Text>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Accept gym master terms & condition" />
+                        {/* <Form.Check type="checkbox" label="Accept gym master terms & condition" /> */}
+                        <Form.Check onClick={() => setAgree(!agree)} className={`fst-italic ${agree ? 'text-dark' : 'text-danger'}`} id='terms' name='terms' type="checkbox" label="Accept gym master terms & condition" />
                     </Form.Group>
-                    <Button className='w-50 mx-auto d-block mb-2' variant="dark" type="submit">
+                    <Button className='w-50 mx-auto d-block mb-2' variant="dark" type="submit" disabled={!agree}>
                         Register
                     </Button>
                     {errorElement}
