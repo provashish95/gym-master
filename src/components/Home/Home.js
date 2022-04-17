@@ -20,9 +20,7 @@ const Home = () => {
                     }
 
                 </div>
-                <div className='mx-auto text-center my-4'>
-                    <Link className='text-decoration-none fw-bolder text-black' to="/services">See More...</Link>
-                </div>
+
             </div>
         </>
     );

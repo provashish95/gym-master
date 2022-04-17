@@ -8,6 +8,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -46,6 +47,7 @@ const Login = () => {
 
     const resetPassword = async () => {
         const email = emailRef.current.value;
+
         if (email) {
             await sendPasswordResetEmail(email);
             toast.success('Sent email');
@@ -54,7 +56,7 @@ const Login = () => {
         }
     }
 
-
+    console.log(user);
     return (
         <div className='container mt-3 mb-5 '>
             <div className='w-50 mx-auto '>
@@ -78,9 +80,10 @@ const Login = () => {
                 <p>New to gym master?<span className='btn text-dark fst-italic fw-bold' onClick={() => navigate('/register')} >Please Register </span></p>
                 <SocialLogin></SocialLogin>
                 <ToastContainer toastStyle={{
-                    backgroundColor: "black",
-                    marginTop: "2.5rem",
-                    color: "white"
+                    backgroundColor: "rgb(216, 216, 216)",
+                    marginTop: "3rem",
+                    color: "black",
+                    borderRadius: "20px"
                 }} />
             </div>
 
