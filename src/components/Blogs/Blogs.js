@@ -53,6 +53,12 @@ const Blogs = () => {
                 <span className='fw-bold text-muted'>AdWords</span>
                 <span className='fw-bold text-muted'>App Indexing</span>
                 <span className='fw-bold text-muted'>Invites</span>
+
+                <div className='d-flex justify-content-center align-items-center my-5'>
+                    <div className='w-50 mx-auto bg-black' style={{ height: '1px' }}></div>
+                    <p className='mx-4'><span><i class="fa-solid fa-book-open-reader fs-3"></i></span></p>
+                    <div className='w-50 bg-black' style={{ height: '1px' }}></div>
+                </div>
             </div>
         </section>
     );
