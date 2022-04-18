@@ -6,7 +6,7 @@ const Services = ({ service }) => {
     const { name, price, description, img } = service;
 
     return (
-        <div className='col-sm-12 col-md-6 col-lg-4 '>
+        <div className='col-sm-12 col-md-6 col-lg-4 my-5'>
             <div className="card mx-auto shadow-lg p-3 mb-2 bg-body rounded" style={{ width: '18rem' }}>
                 <img src={img} className="card-img-top" alt="img" />
                 <div className="card-body">

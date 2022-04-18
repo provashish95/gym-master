@@ -12,45 +12,47 @@ const Banner = () => {
         setIndex(selectedIndex);
     }
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect}>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={banner1}
-                    alt="FirstSlide"
-                />
-                <Carousel.Caption>
-                    <h3 >Get Ready</h3>
-                    <p>Fitness is not a destination. It is a way of life</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={banner2}
-                    alt="Second slide"
-                />
+        <section className='banner'>
+            <Carousel activeIndex={index} onSelect={handleSelect}>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={banner1}
+                        alt="FirstSlide"
+                    />
+                    <Carousel.Caption>
+                        <h4>Get Ready</h4>
+                        <p>Fitness is not a destination. It is a way of life</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={banner2}
+                        alt="Second slide"
+                    />
 
-                <Carousel.Caption>
-                    <h3>Don't Give Up</h3>
-                    <p>Make yourself stronger than your excuses.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={banner3}
-                    alt="Third slide"
-                />
+                    <Carousel.Caption>
+                        <h4>Don't Give Up</h4>
+                        <p >Make yourself stronger than your excuses.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={banner3}
+                        alt="Third slide"
+                    />
 
-                <Carousel.Caption>
-                    <h3>Make yourself proud</h3>
-                    <p>
-                        Push harder than yesterday if you want a different tomorrow
-                    </p>
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
+                    <Carousel.Caption>
+                        <h4>Make yourself proud</h4>
+                        <p>
+                            Push harder than yesterday if you want a different tomorrow
+                        </p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
+        </section>
     );
 };
 

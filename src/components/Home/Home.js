@@ -3,24 +3,27 @@ import useServices from '../../Hook/useServices';
 import Banner from '../Banner/Banner';
 import Services from '../Services/Services';
 import WhyGymMaster from '../WhyGymMaster/WhyGymMaster';
+import './Home.css';
 
 const Home = () => {
     const services = useServices('services.json');
-    //console.log(services);
     const shortServices = services.slice(0, 3);
-    //console.log(shortServices);
+
     return (
         <>
             <Banner></Banner>
-            <div id='services' className='container my-5'>
-                <h4 className='text-center text-black mb-5'>SERVICES</h4>
-                <div className="row justify-content-center g-4 ">
-                    {
-                        shortServices.map(service => <Services key={service.id} service={service}></Services>)
-                    }
-
+            <section className="service-img">
+                <div className="container">
+                    <div className="row">
+                        <h1 className='mt-5 text-center header-style'>SERVICES</h1>
+                    </div>
+                    <div className="row">
+                        {
+                            shortServices.map(service => <Services key={service.id} service={service}></Services>)
+                        }
+                    </div>
                 </div>
-            </div>
+            </section>
             <WhyGymMaster></WhyGymMaster>
         </>
     );

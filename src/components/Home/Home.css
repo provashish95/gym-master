@@ -1,0 +1,11 @@
+.service-img {
+    background-image: url('../../images/banner/services.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-style {
+    color: #d4cfcf;
+    font-family: 'Times New Roman', Times, serif;
+}

@@ -3,3 +3,18 @@
     font-family: 'Times New Roman', Times, serif;
     padding-bottom: 0;
 }
+
+/* media query for medium to large device .... */
+@media only screen and (min-width: 768px) {
+    .carousel-caption {
+        top: 50%;
+    }
+
+    .carousel-caption h4 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1.3rem;
+    }
+}
