@@ -1,12 +1,13 @@
 import React from 'react';
 
+
 const Blogs = () => {
     return (
         <section className='container my-4 '>
-            <div className="row border border-2 py-3">
+            <div className="row border border-2 py-3 blogs-text">
                 <h4><span ><i class="fa-solid fa-circle-arrow-right"></i></span> Difference between authorization and authentication ?</h4>
-                <p>Authentication verifies who the user is or prove yourself.In authentication process, users or persons are verified.  Authentication is done before the authorization process and it needs usually user’s login details.and we can say Authentication determines whether the person is user or not. For example is user login process.</p>
-                <p>And Other one is authorization , so 	Authorization determines what resources a user can access.While in authorization process, person’s or user’s authorities are checked for accessing the resources.After authentication process  users or persons are validated.	While this process is done after the authentication process.Authorization needs user’s privilege or security levels. After successfully user login process than user can access provided pages or files this is called authorization</p>
+                <p>Authentication verifies who the user is or prove yourself.In authentication process, users or persons are verified.  Authentication is done before the authorization process and it needs usually user's login details.and we can say Authentication determines whether the person is user or not. For example is user login process.</p>
+                <p>And Other one is authorization , so 	Authorization determines what resources a user can access.While in authorization process, person's or user's authorities are checked for accessing the resources.After authentication process  users or persons are validated.	While this process is done after the authentication process.Authorization needs user's privilege or security levels. After successfully user login process than user can access provided pages or files this is called authorization</p>
 
                 <h4><span><i class="fa-solid fa-circle-arrow-right"></i></span> Why are you using firebase? What other options do you have to implement authentication?</h4>
                 <p>Google Firebase offers many features that pitch it as the go-to backend development tool for web development.It reduces development workload and time. And it's a perfect prototyping tool. Firebase is simple, lightweight, friendly, and industrially recognized.We can use firebase cause firebase is a less technical and time-saving alternative to writing full-fledged backend code for dynamic apps.With Firebase, it's pretty simple to connect and use built-in third-party authentication providers, including Google, Facebook, Twitter, among others. And if we want to use a pre-built authentication UI.Firebase is a good choice if we want to deploy our projects and get live website link for our projects and firebase can provided us simple authentication system .</p>
