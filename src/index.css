@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Mochiy+Pop+One&family=Montserrat:wght@400;600;700&family=Moon+Dance&family=Open+Sans:wght@300&family=PT+Serif&family=Poppins:wght@100&family=Raleway:wght@500;700&family=Roboto:ital,wght@0,700;1,300&display=swap');
+
 body {
-  background-color: #F5F5F7;
+  background-color: #bbbbbe;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {

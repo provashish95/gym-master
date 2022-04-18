@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import useServices from '../../Hook/useServices';
 import Banner from '../Banner/Banner';
 import Service from '../Service/Service';
+import WhyGymMaster from '../WhyGymMaster/WhyGymMaster';
 
 const Home = () => {
     const services = useServices('services.json');
@@ -20,8 +21,8 @@ const Home = () => {
                     }
 
                 </div>
-
             </div>
+            <WhyGymMaster></WhyGymMaster>
         </>
     );
 };

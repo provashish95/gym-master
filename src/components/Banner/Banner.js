@@ -20,7 +20,7 @@ const Banner = () => {
                 />
                 <Carousel.Caption>
                     <h3 className='text-dark'>Be Happy With Healthy Life</h3>
-                    <p className='text-dark'>Fitness training is regular, structured activity designed to promote health in human beings.</p>
+                    <p className='text-dark'> Structured activity designed to promote health in human beings.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>

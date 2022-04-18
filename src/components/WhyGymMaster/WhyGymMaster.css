@@ -1,0 +1,13 @@
+.bg-img {
+    background-image: url('../../images/banner/whyme.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.whyme-section {
+    height: 600px;
+    color: #d4cfcf;
+    font-family: 'Libre Baskerville', serif;
+}
