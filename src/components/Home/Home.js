@@ -15,7 +15,7 @@ const Home = () => {
             <section className="service-img">
                 <div className="container">
                     <div className="row">
-                        <h1 className='mt-5 text-center header-style'>SERVICES</h1>
+                        <h3 className='mt-5 text-center header-style'>SERVICES</h3>
                     </div>
                     <div className="row">
                         {
