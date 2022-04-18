@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Service = ({ service }) => {
+const Services = ({ service }) => {
     const navigate = useNavigate();
     const { name, price, description, img } = service;
 
@@ -20,4 +20,4 @@ const Service = ({ service }) => {
     );
 };
 
-export default Service;
+export default Services;
