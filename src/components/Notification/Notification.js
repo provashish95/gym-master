@@ -1,8 +1,8 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 
-const Notification = () => {
-    const { userName } = useParams();
+
+const Notification = ({ userName }) => {
+
     console.log(userName);
     return (
         <section className='container  my-5' style={{ height: '18.5rem' }}>
