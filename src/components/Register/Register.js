@@ -87,7 +87,7 @@ const Register = () => {
                     {errorElement}
                 </Form>
                 <p>Already have an account? <span className='btn text-dark fst-italic fw-bold' onClick={navigateLogin}>Please Login </span></p>
-                <SocialLogin></SocialLogin>
+
             </div>
         </div>
     );
