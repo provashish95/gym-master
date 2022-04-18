@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Register.css';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -24,9 +24,10 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     let errorElement;
 
+
     useEffect(() => {
         if (user) {
-            navigate('/')
+            navigate('/');
         }
     }, [user])
 
@@ -53,12 +54,8 @@ const Register = () => {
         } else {
             setUserError('')
             createUserWithEmailAndPassword(email, password)
-
         }
     }
-
-
-
 
 
     return (
