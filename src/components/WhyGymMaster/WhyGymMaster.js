@@ -1,12 +1,11 @@
 import React from 'react';
 import './WhyGymMaster.css';
-import gymImg from '../../images/banner/whyme.jpg';
 
 const WhyGymMaster = () => {
     return (
         <div className='container-fluid bg-img'>
             <div className="container   ">
-                <div className="row whyme-section justify-content-center align-items-center ">
+                <div className="row whyme-section justify-content-center align-items-center">
                     <div className="col-sm-12 col-md-6 col-lg-6  ">
                         <h1 className=' text-center '>WHY GYM MASTER ?</h1>
                     </div>
