@@ -20,7 +20,7 @@ const Banner = () => {
                     alt="FirstSlide"
                 />
                 <Carousel.Caption>
-                    <h3 >Be Happy With Healthy Life</h3>
+                    <h3 >Get Ready</h3>
                     <p>Fitness is not a destination. It is a way of life</p>
                 </Carousel.Caption>
             </Carousel.Item>

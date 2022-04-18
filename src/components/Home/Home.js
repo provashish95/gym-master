@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import useServices from '../../Hook/useServices';
 import Banner from '../Banner/Banner';
-import Service from '../Service/Service';
+import Services from '../Services/Services';
 import WhyGymMaster from '../WhyGymMaster/WhyGymMaster';
 
 const Home = () => {
@@ -17,7 +16,7 @@ const Home = () => {
                 <h4 className='text-center text-black mb-5'>SERVICES</h4>
                 <div className="row justify-content-center g-4 ">
                     {
-                        shortServices.map(service => <Service key={service.id} service={service}></Service>)
+                        shortServices.map(service => <Services key={service.id} service={service}></Services>)
                     }
 
                 </div>
